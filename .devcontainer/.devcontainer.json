@@ -1,0 +1,25 @@
+{
+    "name": "Python 3.9.12 Environment",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "python.pythonPath": "/usr/local/bin/python"
+                // Add other settings here
+            },
+            "extensions": [
+                "ms-python.python"
+                // Add other extensions here
+            ]
+        }
+    },
+    "forwardPorts": [
+        // List any ports you want to forward
+    ],
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "root"
+}
