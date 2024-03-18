@@ -40,14 +40,17 @@ def perceive(persona, maze):
   OUTPUT: 
     ret_events: a list of <ConceptNode> that are perceived and new. 
   """
+
   # PERCEIVE SPACE
   # We get the nearby tiles given our current tile and the persona's vision
   # radius. 
   nearby_tiles = maze.get_nearby_tiles(persona.scratch.curr_tile, 
                                        persona.scratch.vision_r)
 
+  # * Temporarily remove the feature of learning new space.
   # We then store the perceived space. Note that the s_mem of the persona is
-  # in the form of a tree constructed using dictionaries. 
+  # in the form of a tree constructed using dictionaries.
+  '''
   for i in nearby_tiles: 
     i = maze.access_tile(i)
     if i["world"]: 
@@ -65,7 +68,8 @@ def perceive(persona, maze):
                                                     [i["sector"]]
                                                     [i["arena"]]): 
         persona.s_mem.tree[i["world"]][i["sector"]][i["arena"]] += [
-                                                             i["game_object"]]
+                                                             i["game_object"]]  
+  '''
 
   # PERCEIVE EVENTS. 
   # We will perceive events that take place in the same arena as the
@@ -79,6 +83,7 @@ def perceive(persona, maze):
   percept_events_list = []
   # First, we put all events that are occuring in the nearby tiles into the
   # percept_events_list
+  
   for tile in nearby_tiles: 
     tile_details = maze.access_tile(tile)
     if tile_details["events"]: 

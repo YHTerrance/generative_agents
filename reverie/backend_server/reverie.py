@@ -34,6 +34,8 @@ from global_methods import *
 from utils import *
 from maze import *
 from persona.persona import *
+import sys
+import argparse
 
 ##############################################################################
 #                                  REVERIE                                   #
@@ -303,7 +305,7 @@ class ReverieServer:
     game_obj_cleanup = dict()
 
     # The main while loop of Reverie. 
-    while (True): 
+    while (True):
       # Done with this iteration if <int_counter> reaches 0. 
       if int_counter == 0: 
         break
@@ -324,7 +326,7 @@ class ReverieServer:
         except: 
           pass
       
-        if env_retrieved: 
+        if env_retrieved:
           # This is where we go through <game_obj_cleanup> to clean up all 
           # object actions that were used in this cylce. 
           for key, val in game_obj_cleanup.items(): 
@@ -348,6 +350,10 @@ class ReverieServer:
             self.maze.remove_subject_events_from_tile(persona.name, curr_tile)
             self.maze.add_event_from_tile(persona.scratch
                                          .get_curr_event_and_desc(), new_tile)
+            
+            # Update values in the persona object
+            persona.scratch.curr_tile = new_tile
+            persona.scratch.curr_time = self.curr_time
 
             # Now, the persona will travel to get to their destination. *Once*
             # the persona gets there, we activate the object action.
@@ -368,7 +374,7 @@ class ReverieServer:
           # move. The movement for each of the personas comes in the form of
           # x y coordinates where the persona will move towards. e.g., (50, 34)
           # This is where the core brains of the personas are invoked. 
-          movements = {"persona": dict(), 
+          movements = {"persona": dict(),
                        "meta": dict()}
           for persona_name, persona in self.personas.items(): 
             # <next_tile> is a x,y coordinate. e.g., (58, 9)
@@ -376,9 +382,14 @@ class ReverieServer:
             # <description> is a string description of the movement. e.g., 
             #   writing her next novel (editing her novel) 
             #   @ double studio:double studio:common room:sofa
+            persona.move(
+              self.maze, self.personas, self.personas_tile[persona_name], 
+              self.curr_time)
+
             next_tile, pronunciatio, description = persona.move(
               self.maze, self.personas, self.personas_tile[persona_name], 
               self.curr_time)
+
             movements["persona"][persona_name] = {}
             movements["persona"][persona_name]["movement"] = next_tile
             movements["persona"][persona_name]["pronunciatio"] = pronunciatio
@@ -605,8 +616,13 @@ if __name__ == '__main__':
   #                    "July1_the_ville_isabella_maria_klaus-step-3-21")
   # rs.open_server()
 
-  origin = input("Enter the name of the forked simulation: ").strip()
-  target = input("Enter the name of the new simulation: ").strip()
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-f', '--forked_simulation', help='Name of the forked simulation')
+  parser.add_argument('-n', '--new_simulation', help='Name of the new simulation')
+  args = parser.parse_args()
+
+  origin = args.forked_simulation or input("Enter the name of the forked simulation: ").strip()
+  target = args.new_simulation or input("Enter the name of the new simulation: ").strip()
 
   rs = ReverieServer(origin, target)
   rs.open_server()

@@ -14,9 +14,18 @@ import os
 import sys
 import numpy
 import math
+import pdb
+import inspect
 import shutil, errno
 
 from os import listdir
+
+def set_trace():
+    caller_frame = inspect.currentframe().f_back
+    filename = caller_frame.f_code.co_filename
+    line_number = caller_frame.f_lineno
+    print(f"Debugging at {filename}:{line_number}")
+    pdb.set_trace()
 
 def create_folder_if_not_there(curr_path): 
   """
@@ -207,22 +216,27 @@ def std(list_of_val):
   std = numpy.std(list_of_val)
   return std
 
-
 def copyanything(src, dst):
-  """
-  Copy over everything in the src folder to dst folder. 
-  ARGS:
-    src: address of the source folder  
-    dst: address of the destination folder  
-  RETURNS: 
-    None
-  """
-  try:
-    shutil.copytree(src, dst)
-  except OSError as exc: # python >2.5
-    if exc.errno in (errno.ENOTDIR, errno.EINVAL):
-      shutil.copy(src, dst)
-    else: raise
+    """
+    Copy over everything in the src folder to dst folder. 
+    ARGS:
+      src: address of the source folder  
+      dst: address of the destination folder  
+    RETURNS: 
+      None
+    """
+    try:
+      if os.path.exists(dst):
+        response = input(f"Destination directory {dst} already exists. Do you want to remove it? (y/n): ")
+        if response.lower() == 'y':
+          shutil.rmtree(dst)
+        else:
+          return
+      shutil.copytree(src, dst)
+    except OSError as exc: # python >2.5
+      if exc.errno in (errno.ENOTDIR, errno.EINVAL):
+        shutil.copy(src, dst)
+      else: raise
 
 
 if __name__ == '__main__':

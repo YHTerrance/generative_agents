@@ -50,7 +50,7 @@ class Maze:
     _wb = blocks_folder + "/world_blocks.csv"
     wb_rows = read_file_to_list(_wb, header=False)
     wb = wb_rows[0][-1]
-   
+
     _sb = blocks_folder + "/sector_blocks.csv"
     sb_rows = read_file_to_list(_sb, header=False)
     sb_dict = dict()

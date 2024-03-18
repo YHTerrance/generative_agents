@@ -1,0 +1,100 @@
+{
+  "persona": {
+    "Isabella Rodriguez": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Maria Lopez discussing getting involved in the drama club and design team while Maria also mentions her commitments to the science club and environmental initiatives, with Isabella proposing a project involving sustainable set designs for the next play and Maria expressing interest in contributing due to her biology and environmental interests. @ <persona> Maria Lopez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey, Maria! I noticed you seem really into the arts too. Have you ever thought about joining the drama club or helping out with the design team?"
+        ],
+        [
+          "Maria Lopez",
+          "Hey Isabella! I actually haven't thought about that before, but it does sound interesting. I'm more focused on my commitments to the science club and environmental initiatives right now, but maybe I'll look into it in the future. Thanks for suggesting it!"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's awesome that you're involved with the science club and environmental initiatives! We actually have a project coming up that involves creating sustainable set designs for our next play. If you're interested, we could use some help in that area as well."
+        ],
+        [
+          "Maria Lopez",
+          "That project does sound really interesting! I'd love to help out with the sustainable set designs. I think it aligns well with my interests in biology and the environment."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's great to hear, Maria! I can bring you up to speed on the project details after school today if you're available. We can brainstorm some ideas together!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds perfect! I'll be free after school, so I can definitely meet up with you to discuss the project details."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Great! Let's meet outside the auditorium at 3 pm to discuss the project details. Looking forward to working with you on this!"
+        ],
+        [
+          "Maria Lopez",
+          "Great, I'll see you outside the auditorium at 3 pm!"
+        ]
+      ]
+    },
+    "Maria Lopez": {
+      "movement": [
+        13,
+        6
+      ],
+      "pronunciatio": "\ud83d\udcac",
+      "description": "conversing about Isabella Rodriguez and Maria Lopez discussing getting involved in the drama club and design team while Maria also mentions her commitments to the science club and environmental initiatives, with Isabella proposing a project involving sustainable set designs for the next play and Maria expressing interest in contributing due to her biology and environmental interests. @ <persona> Isabella Rodriguez",
+      "chat": [
+        [
+          "Isabella Rodriguez",
+          "Hey, Maria! I noticed you seem really into the arts too. Have you ever thought about joining the drama club or helping out with the design team?"
+        ],
+        [
+          "Maria Lopez",
+          "Hey Isabella! I actually haven't thought about that before, but it does sound interesting. I'm more focused on my commitments to the science club and environmental initiatives right now, but maybe I'll look into it in the future. Thanks for suggesting it!"
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's awesome that you're involved with the science club and environmental initiatives! We actually have a project coming up that involves creating sustainable set designs for our next play. If you're interested, we could use some help in that area as well."
+        ],
+        [
+          "Maria Lopez",
+          "That project does sound really interesting! I'd love to help out with the sustainable set designs. I think it aligns well with my interests in biology and the environment."
+        ],
+        [
+          "Isabella Rodriguez",
+          "That's great to hear, Maria! I can bring you up to speed on the project details after school today if you're available. We can brainstorm some ideas together!"
+        ],
+        [
+          "Maria Lopez",
+          "That sounds perfect! I'll be free after school, so I can definitely meet up with you to discuss the project details."
+        ],
+        [
+          "Isabella Rodriguez",
+          "Great! Let's meet outside the auditorium at 3 pm to discuss the project details. Looking forward to working with you on this!"
+        ],
+        [
+          "Maria Lopez",
+          "Great, I'll see you outside the auditorium at 3 pm!"
+        ]
+      ]
+    },
+    "Klaus Mueller": {
+      "movement": [
+        22,
+        10
+      ],
+      "pronunciatio": "\ud83d\ude42",
+      "description": "looking to make friends @ the Gala:the Auditorium:Main Hall:<random>",
+      "chat": null
+    }
+  },
+  "meta": {
+    "curr_time": "February 13, 2023, 00:03:00"
+  }
+}

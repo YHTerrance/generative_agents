@@ -42,7 +42,9 @@ class ConceptNode:
     self.keywords = keywords
     self.filling = filling
 
-
+  def __repr__(self):
+    return f"<ConceptNode {self.spo_summary()}>"
+  
   def spo_summary(self): 
     return (self.subject, self.predicate, self.object)
 

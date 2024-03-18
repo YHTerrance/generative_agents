@@ -293,13 +293,13 @@ def generate_convo(maze, init_persona, target_persona):
   return convo, convo_length
 
 
-def generate_convo_summary(persona, convo): 
+def generate_convo_summary(persona, convo):
   convo_summary = run_gpt_prompt_summarize_conversation(persona, convo)[0]
   return convo_summary
 
 
 def generate_decide_to_talk(init_persona, target_persona, retrieved): 
-  x =run_gpt_prompt_decide_to_talk(init_persona, target_persona, retrieved)[0]
+  x = run_gpt_prompt_decide_to_talk(init_persona, target_persona, retrieved)[0]
   if debug: print ("GNS FUNCTION: <generate_decide_to_talk>")
 
   if x == "yes": 
@@ -516,7 +516,45 @@ def _long_term_planning(persona, new_day):
   # time.sleep(10)
   # print("Done sleeping!")
 
+def _determine_default_action(persona, maze):
+  """
+  Terrance's simple version of determining action
+  """
+  act_desp = "looking to make friends"
+  act_dura = 1 # Manually configured to 1 minute
+  
+  tile = maze.access_tile(persona.scratch.curr_tile)
 
+  act_world = tile["world"]
+  act_sector = tile["sector"]
+  act_arena = tile["arena"]
+  
+  act_address = f"{act_world}:{act_sector}:{act_arena}"
+  act_game_object = "<random>"
+  new_address = f"{act_world}:{act_sector}:{act_arena}:{act_game_object}"
+
+  act_pron = "🙂"
+  act_event = generate_action_event_triple(act_desp, persona)
+
+  # Persona's actions also influence the object states. We set those up here. 
+  act_obj_desp = None
+  act_obj_pron = None
+  act_obj_event = (None, None, None)
+
+  # Adding the action to persona's queue. 
+  persona.scratch.add_new_action(new_address, 
+                                 int(act_dura), 
+                                 act_desp, 
+                                 act_pron, 
+                                 act_event,
+                                 None,
+                                 None,
+                                 None,
+                                 None,
+                                 act_obj_desp, 
+                                 act_obj_pron, 
+                                 act_obj_event)
+  
 
 def _determine_action(persona, maze): 
   """
@@ -541,6 +579,11 @@ def _determine_action(persona, maze):
       act_dura: the duration of the action in minutes. 
     OUTPUT: 
       a boolean. True if we need to decompose, False otherwise. 
+    """
+
+
+    """
+    
     """
     if "sleep" not in act_desp and "bed" not in act_desp: 
       return True
@@ -713,6 +756,9 @@ def _should_react(persona, retrieved, personas):
               <Persona> instance as values. 
   """
   def lets_talk(init_persona, target_persona, retrieved):
+    
+    '''
+    * Terrance: we do not have actions in the moment since we removed daily planning
     if (not target_persona.scratch.act_address 
         or not target_persona.scratch.act_description
         or not init_persona.scratch.act_address
@@ -727,7 +773,8 @@ def _should_react(persona, retrieved, personas):
       return False
 
     if "<waiting>" in target_persona.scratch.act_address: 
-      return False
+      return False    
+    '''
 
     if (target_persona.scratch.chatting_with 
       or init_persona.scratch.chatting_with): 
@@ -784,7 +831,7 @@ def _should_react(persona, retrieved, personas):
   # If the persona is chatting right now, default to no reaction 
   if persona.scratch.chatting_with: 
     return False
-  if "<waiting>" in persona.scratch.act_address: 
+  if persona.scratch.act_address and "<waiting>" in persona.scratch.act_address: 
     return False
 
   # Recall that retrieved takes the following form: 
@@ -898,10 +945,28 @@ def _chat_react(maze, persona, focused_event, reaction_mode, personas):
     act_obj_pronunciatio = None
     act_obj_event = (None, None, None)
 
-    _create_react(p, inserted_act, inserted_act_dur,
-      act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
-      act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
-      act_obj_event, act_start_time)
+    # * Terrance: In the original _create_react, the original schedule is shifted back in schedule.
+    # * In our case, we directly overwrite the action since our default action is random.
+    p.scratch.add_new_action(
+      act_address,
+      inserted_act_dur,
+      inserted_act,
+      act_pronunciatio,
+      act_event,
+      chatting_with,
+      convo,
+      chatting_with_buffer,
+      chatting_end_time,
+      act_obj_description,
+      act_obj_pronunciatio,
+      act_obj_event,
+      act_start_time
+    )
+
+    # _create_react(p, inserted_act, inserted_act_dur,
+    #   act_address, act_event, chatting_with, convo, chatting_with_buffer, chatting_end_time,
+    #   act_pronunciatio, act_obj_description, act_obj_pronunciatio, 
+    #   act_obj_event, act_start_time)
 
 
 def _wait_react(persona, reaction_mode): 
@@ -950,13 +1015,20 @@ def plan(persona, maze, personas, new_day, retrieved):
   OUTPUT 
     The target action address of the persona (persona.scratch.act_address).
   """ 
+
+  # * Terrance: planning functionality is removed
+  '''
   # PART 1: Generate the hourly schedule. 
   if new_day: 
     _long_term_planning(persona, new_day)
+  '''
 
   # PART 2: If the current action has expired, we want to create a new plan.
   if persona.scratch.act_check_finished(): 
-    _determine_action(persona, maze)
+    # * Park uses the following function to plan and determine the action of a persona
+    # _determine_action(persona, maze)
+    # * We simply instruct it to just wander around instead of planning
+    _determine_default_action(persona, maze)
 
   # PART 3: If you perceived an event that needs to be responded to (saw 
   # another persona), and retrieved relevant information. 
@@ -970,7 +1042,7 @@ def plan(persona, maze, personas, new_day, retrieved):
   focused_event = False
   if retrieved.keys(): 
     focused_event = _choose_retrieved(persona, retrieved)
-  
+    
   # Step 2: Once we choose an event, we need to determine whether the
   #         persona will take any actions for the perceived event. There are
   #         three possible modes of reaction returned by _should_react. 
@@ -979,7 +1051,7 @@ def plan(persona, maze, personas, new_day, retrieved):
   #         c) False
   if focused_event: 
     reaction_mode = _should_react(persona, focused_event, personas)
-    if reaction_mode: 
+    if reaction_mode:
       # If we do want to chat, then we generate conversation 
       if reaction_mode[:9] == "chat with":
         _chat_react(maze, persona, focused_event, reaction_mode, personas)

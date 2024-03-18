@@ -8,6 +8,7 @@ static_dirs/*
 
 bin/
 include/
+_virtualenv/
 pip-selfcheck.json
 .DS_Store
 

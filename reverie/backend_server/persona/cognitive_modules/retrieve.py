@@ -221,19 +221,23 @@ def new_retrieve(persona, focal_points, n_count=30):
     # Getting all nodes from the agent's memory (both thoughts and events) and
     # sorting them by the datetime of creation.
     # You could also imagine getting the raw conversation, but for now. 
+
     nodes = [[i.last_accessed, i]
-              for i in persona.a_mem.seq_event + persona.a_mem.seq_thought
-              if "idle" not in i.embedding_key]
+          for i in persona.a_mem.seq_event + persona.a_mem.seq_thought
+          if "idle" not in i.embedding_key]
+
     nodes = sorted(nodes, key=lambda x: x[0])
     nodes = [i for created, i in nodes]
 
     # Calculating the component dictionaries and normalizing them.
     recency_out = extract_recency(persona, nodes)
-    recency_out = normalize_dict_floats(recency_out, 0, 1)
     importance_out = extract_importance(persona, nodes)
-    importance_out = normalize_dict_floats(importance_out, 0, 1)  
     relevance_out = extract_relevance(persona, nodes, focal_pt)
-    relevance_out = normalize_dict_floats(relevance_out, 0, 1)
+    
+    if nodes:
+      recency_out = normalize_dict_floats(recency_out, 0, 1)
+      importance_out = normalize_dict_floats(importance_out, 0, 1)  
+      relevance_out = normalize_dict_floats(relevance_out, 0, 1)
 
     # Computing the final scores that combines the component values. 
     # Note to self: test out different weights. [1, 1, 1] tends to work

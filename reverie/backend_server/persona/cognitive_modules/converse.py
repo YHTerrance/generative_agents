@@ -50,6 +50,9 @@ def generate_summarize_agent_relationship(init_persona,
   for i in all_embedding_keys: 
     all_embedding_key_str += f"{i}\n"
 
+  if all_embedding_keys == []:
+    return f"{init_persona.scratch.name} and {target_persona.scratch.name} have never met before. They do not have any memory of each other."
+
   summarized_relationship = run_gpt_prompt_agent_chat_summarize_relationship(
                               init_persona, target_persona,
                               all_embedding_key_str)[0]
@@ -127,11 +130,12 @@ def agent_chat_v2(maze, init_persona, target_persona):
   curr_chat = []
   print ("July 23")
 
-  for i in range(8): 
+  for i in range(4):
     focal_points = [f"{target_persona.scratch.name}"]
     retrieved = new_retrieve(init_persona, focal_points, 50)
     relationship = generate_summarize_agent_relationship(init_persona, target_persona, retrieved)
     print ("-------- relationshopadsjfhkalsdjf", relationship)
+
     last_chat = ""
     for i in curr_chat[-4:]:
       last_chat += ": ".join(i) + "\n"

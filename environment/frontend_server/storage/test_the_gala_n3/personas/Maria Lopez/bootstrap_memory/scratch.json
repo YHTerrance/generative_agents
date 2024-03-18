@@ -1,0 +1,235 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 00:16:30",
+  "curr_tile": [
+    28,
+    11
+  ],
+  "daily_plan_req": "Maria Lopez dedicates her mornings to volunteering at the local animal shelter before attending school. She spends her afternoons in the science club, conducting experiments.",
+  "name": "Maria Lopez",
+  "first_name": "Maria",
+  "last_name": "Lopez",
+  "age": 16,
+  "innate": "compassionate, curious, proactive",
+  "learned": "Maria Lopez has nurtured a love for animals and a fascination with the natural world, leading her to pursue interests in both biology and environmental science.",
+  "currently": "Maria Lopez is organizing a community clean-up event to promote environmental awareness among her peers. She's also starting a fundraiser for the animal shelter.",
+  "lifestyle": "Maria Lopez is an early riser, utilizing the quiet mornings for personal study. She's disciplined in her commitments but ensures to spend her free time exploring nature.",
+  "living_area": "the Sympo:the Grand Symposium:Main Hall",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 107,
+  "importance_ele_n": 10,
+  "thought_count": 5,
+  "daily_req": [],
+  "f_daily_schedule": [],
+  "f_daily_schedule_hourly_org": [],
+  "act_address": "the Gala:the Auditorium:Main Hall:<random>",
+  "act_start_time": "February 13, 2023, 00:16:00",
+  "act_duration": 1,
+  "act_description": "looking to make friends",
+  "act_pronunciatio": "\ud83d\ude42",
+  "act_event": [
+    "Maria Lopez",
+    "look",
+    "friends"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Isabella Rodriguez": 672
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      25,
+      11
+    ],
+    [
+      24,
+      11
+    ],
+    [
+      23,
+      11
+    ],
+    [
+      22,
+      11
+    ],
+    [
+      21,
+      11
+    ],
+    [
+      20,
+      11
+    ],
+    [
+      19,
+      11
+    ],
+    [
+      18,
+      11
+    ],
+    [
+      17,
+      11
+    ],
+    [
+      16,
+      11
+    ],
+    [
+      15,
+      11
+    ],
+    [
+      14,
+      11
+    ],
+    [
+      13,
+      11
+    ],
+    [
+      12,
+      11
+    ],
+    [
+      11,
+      11
+    ],
+    [
+      10,
+      11
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      8,
+      11
+    ],
+    [
+      7,
+      11
+    ],
+    [
+      6,
+      11
+    ],
+    [
+      5,
+      11
+    ],
+    [
+      4,
+      11
+    ],
+    [
+      3,
+      11
+    ],
+    [
+      2,
+      11
+    ],
+    [
+      1,
+      11
+    ],
+    [
+      1,
+      12
+    ],
+    [
+      1,
+      13
+    ],
+    [
+      1,
+      14
+    ],
+    [
+      1,
+      15
+    ],
+    [
+      1,
+      16
+    ],
+    [
+      1,
+      17
+    ],
+    [
+      1,
+      18
+    ],
+    [
+      1,
+      19
+    ],
+    [
+      1,
+      20
+    ],
+    [
+      1,
+      21
+    ],
+    [
+      1,
+      22
+    ],
+    [
+      1,
+      23
+    ],
+    [
+      1,
+      24
+    ],
+    [
+      1,
+      25
+    ],
+    [
+      1,
+      26
+    ],
+    [
+      1,
+      27
+    ],
+    [
+      1,
+      28
+    ],
+    [
+      1,
+      29
+    ]
+  ]
+}

@@ -47,6 +47,8 @@ class Persona:
     scratch_saved = f"{folder_mem_saved}/bootstrap_memory/scratch.json"
     self.scratch = Scratch(scratch_saved)
 
+  def __repr__(self):
+    return f"<Persona: {self.name}>"
 
   def save(self, save_folder): 
     """
@@ -214,6 +216,7 @@ class Persona:
     elif (self.scratch.curr_time.strftime('%A %B %d')
           != curr_time.strftime('%A %B %d')):
       new_day = "New day"
+
     self.scratch.curr_time = curr_time
 
     # Main cognitive sequence begins here. 
@@ -234,39 +237,3 @@ class Persona:
   def open_convo_session(self, convo_mode): 
     open_convo_session(self, convo_mode)
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

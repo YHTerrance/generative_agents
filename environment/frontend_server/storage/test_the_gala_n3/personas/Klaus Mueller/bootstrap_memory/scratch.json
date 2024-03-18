@@ -1,0 +1,127 @@
+{
+  "vision_r": 8,
+  "att_bandwidth": 8,
+  "retention": 8,
+  "curr_time": "February 13, 2023, 00:16:30",
+  "curr_tile": [
+    37,
+    10
+  ],
+  "daily_plan_req": "Klaus Mueller begins his day with a morning run at 6am, followed by school, then football practice in the afternoon. He spends his evenings studying.",
+  "name": "Klaus Mueller",
+  "first_name": "Klaus",
+  "last_name": "Mueller",
+  "age": 18,
+  "innate": "disciplined, competitive, team-player",
+  "learned": "Klaus Mueller has honed his skills on the football field, becoming a key player on his high school team. He's also committed to his academic success, maintaining high grades.",
+  "currently": "Klaus Mueller is preparing for college football tryouts while balancing his schoolwork. He's also volunteering as a youth football coach on weekends.",
+  "lifestyle": "Klaus Mueller follows a strict schedule, balancing his sports, academic, and personal life. He ensures eight hours of sleep, prioritizes nutrition, and maintains a consistent study routine.",
+  "living_area": "the Gala:the Auditorium:Main Hall",
+  "concept_forget": 100,
+  "daily_reflection_time": 180,
+  "daily_reflection_size": 5,
+  "overlap_reflect_th": 4,
+  "kw_strg_event_reflect_th": 10,
+  "kw_strg_thought_reflect_th": 9,
+  "recency_w": 1,
+  "relevance_w": 1,
+  "importance_w": 1,
+  "recency_decay": 0.99,
+  "importance_trigger_max": 150,
+  "importance_trigger_curr": 116,
+  "importance_ele_n": 10,
+  "thought_count": 5,
+  "daily_req": [],
+  "f_daily_schedule": [],
+  "f_daily_schedule_hourly_org": [],
+  "act_address": "the Gala:the Auditorium:Main Hall:<random>",
+  "act_start_time": "February 13, 2023, 00:16:00",
+  "act_duration": 1,
+  "act_description": "looking to make friends",
+  "act_pronunciatio": "\ud83d\ude42",
+  "act_event": [
+    "Klaus Mueller",
+    "look",
+    "make friends"
+  ],
+  "act_obj_description": null,
+  "act_obj_pronunciatio": null,
+  "act_obj_event": [
+    null,
+    null,
+    null
+  ],
+  "chatting_with": null,
+  "chat": null,
+  "chatting_with_buffer": {
+    "Isabella Rodriguez": 744
+  },
+  "chatting_end_time": null,
+  "act_path_set": true,
+  "planned_path": [
+    [
+      34,
+      10
+    ],
+    [
+      33,
+      10
+    ],
+    [
+      32,
+      10
+    ],
+    [
+      31,
+      10
+    ],
+    [
+      30,
+      10
+    ],
+    [
+      29,
+      10
+    ],
+    [
+      28,
+      10
+    ],
+    [
+      27,
+      10
+    ],
+    [
+      26,
+      10
+    ],
+    [
+      25,
+      10
+    ],
+    [
+      24,
+      10
+    ],
+    [
+      23,
+      10
+    ],
+    [
+      22,
+      10
+    ],
+    [
+      22,
+      9
+    ],
+    [
+      22,
+      8
+    ],
+    [
+      22,
+      7
+    ]
+  ]
+}
