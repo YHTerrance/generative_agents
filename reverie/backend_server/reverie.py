@@ -36,6 +36,7 @@ from maze import *
 from persona.persona import *
 import sys
 import argparse
+import os
 
 ##############################################################################
 #                                  REVERIE                                   #
@@ -306,6 +307,9 @@ class ReverieServer:
 
     # The main while loop of Reverie. 
     while (True):
+
+      print(f"COUNTER: {int_counter}")
+      
       # Done with this iteration if <int_counter> reaches 0. 
       if int_counter == 0: 
         break
@@ -318,13 +322,11 @@ class ReverieServer:
       if check_if_file_exists(curr_env_file):
         # If we have an environment file, it means we have a new perception
         # input to our personas. So we first retrieve it.
-        try: 
-          # Try and save block for robustness of the while loop.
-          with open(curr_env_file) as json_file:
-            new_env = json.load(json_file)
-            env_retrieved = True
-        except: 
-          pass
+
+        # Try and save block for robustness of the while loop.
+        with open(curr_env_file) as json_file:
+          new_env = json.load(json_file)
+          env_retrieved = True
       
         if env_retrieved:
           # This is where we go through <game_obj_cleanup> to clean up all 
@@ -409,6 +411,9 @@ class ReverieServer:
           #  "persona": {"Klaus Mueller": {"movement": [38, 12]}}, 
           #  "meta": {curr_time: <datetime>}}
           curr_move_file = f"{sim_folder}/movement/{self.step}.json"
+
+          # Create the directory if it doesn't exist
+          os.makedirs(os.path.dirname(curr_move_file), exist_ok=True)
           with open(curr_move_file, "w") as outfile: 
             outfile.write(json.dumps(movements, indent=2))
 
