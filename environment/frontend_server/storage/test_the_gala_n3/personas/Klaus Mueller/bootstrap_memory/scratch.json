@@ -2,9 +2,9 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "February 13, 2023, 00:16:30",
+  "curr_time": "February 13, 2023, 00:01:30",
   "curr_tile": [
-    37,
+    27,
     10
   ],
   "daily_plan_req": "Klaus Mueller begins his day with a morning run at 6am, followed by school, then football practice in the afternoon. He spends his evenings studying.",
@@ -28,14 +28,14 @@
   "importance_w": 1,
   "recency_decay": 0.99,
   "importance_trigger_max": 150,
-  "importance_trigger_curr": 116,
-  "importance_ele_n": 10,
+  "importance_trigger_curr": 132,
+  "importance_ele_n": 6,
   "thought_count": 5,
   "daily_req": [],
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
   "act_address": "the Gala:the Auditorium:Main Hall:<random>",
-  "act_start_time": "February 13, 2023, 00:16:00",
+  "act_start_time": "February 13, 2023, 00:01:00",
   "act_duration": 1,
   "act_description": "looking to make friends",
   "act_pronunciatio": "\ud83d\ude42",
@@ -53,75 +53,65 @@
   ],
   "chatting_with": null,
   "chat": null,
-  "chatting_with_buffer": {
-    "Isabella Rodriguez": 744
-  },
+  "chatting_with_buffer": {},
   "chatting_end_time": null,
   "act_path_set": true,
   "planned_path": [
     [
-      34,
-      10
-    ],
-    [
-      33,
-      10
-    ],
-    [
-      32,
-      10
-    ],
-    [
-      31,
-      10
-    ],
-    [
-      30,
-      10
-    ],
-    [
-      29,
-      10
-    ],
-    [
-      28,
-      10
+      27,
+      13
     ],
     [
       27,
-      10
+      14
     ],
     [
-      26,
-      10
+      27,
+      15
     ],
     [
-      25,
-      10
+      27,
+      16
     ],
     [
-      24,
-      10
+      27,
+      17
     ],
     [
-      23,
-      10
+      27,
+      18
     ],
     [
-      22,
-      10
+      27,
+      19
     ],
     [
-      22,
-      9
+      27,
+      20
     ],
     [
-      22,
-      8
+      27,
+      21
     ],
     [
-      22,
-      7
+      27,
+      22
+    ],
+    [
+      27,
+      23
+    ],
+    [
+      27,
+      24
+    ],
+    [
+      27,
+      25
+    ],
+    [
+      27,
+      26
     ]
   ]
 }

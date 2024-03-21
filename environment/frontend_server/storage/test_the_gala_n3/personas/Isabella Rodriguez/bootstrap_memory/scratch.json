@@ -2,10 +2,10 @@
   "vision_r": 8,
   "att_bandwidth": 8,
   "retention": 8,
-  "curr_time": "February 13, 2023, 00:16:30",
+  "curr_time": "February 13, 2023, 00:01:30",
   "curr_tile": [
-    23,
-    22
+    13,
+    6
   ],
   "daily_plan_req": "Isabella Rodriguez spends her mornings in art class and her afternoons participating in the drama club. She often stays late to help design sets for the upcoming school plays.",
   "name": "Isabella Rodriguez",
@@ -28,21 +28,21 @@
   "importance_w": 1,
   "recency_decay": 0.995,
   "importance_trigger_max": 150,
-  "importance_trigger_curr": 96,
-  "importance_ele_n": 10,
+  "importance_trigger_curr": 129,
+  "importance_ele_n": 6,
   "thought_count": 5,
   "daily_req": [],
   "f_daily_schedule": [],
   "f_daily_schedule_hourly_org": [],
-  "act_address": "the Gala:the Auditorium:Main Hall:<random>",
-  "act_start_time": "February 13, 2023, 00:16:00",
-  "act_duration": 1,
-  "act_description": "looking to make friends",
-  "act_pronunciatio": "\ud83d\ude42",
+  "act_address": "<persona> Maria Lopez",
+  "act_start_time": "February 13, 2023, 00:00:00",
+  "act_duration": 5,
+  "act_description": "conversing about collaborating on a art project together and planning to meet up in the art room after school tomorrow to start brainstorming ideas",
+  "act_pronunciatio": "\ud83d\udcac",
   "act_event": [
     "Isabella Rodriguez",
-    "look",
-    "friends"
+    "chat with",
+    "Maria Lopez"
   ],
   "act_obj_description": null,
   "act_obj_pronunciatio": null,
@@ -51,206 +51,45 @@
     null,
     null
   ],
-  "chatting_with": null,
-  "chat": null,
-  "chatting_with_buffer": {
-    "Maria Lopez": 672,
-    "Klaus Mueller": 744
-  },
-  "chatting_end_time": null,
-  "act_path_set": true,
-  "planned_path": [
+  "chatting_with": "Maria Lopez",
+  "chat": [
     [
-      23,
-      19
+      "Isabella Rodriguez",
+      "Hi Maria! I couldn't help but notice your incredible artwork in the art class yesterday. You have such a unique style!"
     ],
     [
-      23,
-      18
+      "Maria Lopez",
+      "Thank you, Isabella! I really enjoy expressing myself through art. Have you always been interested in art as well?"
     ],
     [
-      23,
-      17
+      "Isabella Rodriguez",
+      "Yes, I've always been drawn to art. I find it to be the perfect outlet for my creativity and emotions. How about you? What inspires your unique style?"
     ],
     [
-      23,
-      16
+      "Maria Lopez",
+      "Nature and animals play a big role in inspiring my art. I love incorporating elements of the natural world into my pieces."
     ],
     [
-      23,
-      15
+      "Isabella Rodriguez",
+      "That's amazing, Maria! I also find a lot of inspiration from nature. Have you ever thought about collaborating on a project together?"
     ],
     [
-      23,
-      14
+      "Maria Lopez",
+      "That sounds like a fantastic idea, Isabella! I would love to collaborate on a project together. We could combine our styles and create something truly unique."
     ],
     [
-      23,
-      13
+      "Isabella Rodriguez",
+      "We could start brainstorming ideas during our free periods. How about we meet up in the art room after school tomorrow?"
     ],
     [
-      23,
-      12
-    ],
-    [
-      23,
-      11
-    ],
-    [
-      23,
-      10
-    ],
-    [
-      23,
-      9
-    ],
-    [
-      23,
-      8
-    ],
-    [
-      23,
-      7
-    ],
-    [
-      23,
-      6
-    ],
-    [
-      23,
-      5
-    ],
-    [
-      24,
-      5
-    ],
-    [
-      25,
-      5
-    ],
-    [
-      26,
-      5
-    ],
-    [
-      27,
-      5
-    ],
-    [
-      28,
-      5
-    ],
-    [
-      29,
-      5
-    ],
-    [
-      30,
-      5
-    ],
-    [
-      31,
-      5
-    ],
-    [
-      32,
-      5
-    ],
-    [
-      33,
-      5
-    ],
-    [
-      34,
-      5
-    ],
-    [
-      35,
-      5
-    ],
-    [
-      36,
-      5
-    ],
-    [
-      37,
-      5
-    ],
-    [
-      38,
-      5
-    ],
-    [
-      39,
-      5
-    ],
-    [
-      40,
-      5
-    ],
-    [
-      41,
-      5
-    ],
-    [
-      42,
-      5
-    ],
-    [
-      43,
-      5
-    ],
-    [
-      44,
-      5
-    ],
-    [
-      45,
-      5
-    ],
-    [
-      46,
-      5
-    ],
-    [
-      47,
-      5
-    ],
-    [
-      48,
-      5
-    ],
-    [
-      49,
-      5
-    ],
-    [
-      50,
-      5
-    ],
-    [
-      51,
-      5
-    ],
-    [
-      52,
-      5
-    ],
-    [
-      53,
-      5
-    ],
-    [
-      54,
-      5
-    ],
-    [
-      55,
-      5
-    ],
-    [
-      56,
-      5
+      "Maria Lopez",
+      "That sounds like a plan, Isabella! Let's definitely meet up in the art room after school tomorrow to start brainstorming ideas."
     ]
-  ]
+  ],
+  "chatting_with_buffer": {
+    "Maria Lopez": 800
+  },
+  "chatting_end_time": "February 13, 2023, 00:05:00",
+  "act_path_set": true,
+  "planned_path": []
 }
